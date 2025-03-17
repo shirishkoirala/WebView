@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         webSettings.cacheMode = WebSettings.LOAD_CACHE_ELSE_NETWORK
         // Enable JavaScript (Required for React apps)
         webSettings.javaScriptEnabled = true
-
+        webSettings.mediaPlaybackRequiresUserGesture = false
         // Improve rendering performance
         webSettings.domStorageEnabled = true
         webSettings.cacheMode = WebSettings.LOAD_DEFAULT
