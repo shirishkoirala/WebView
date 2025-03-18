@@ -1,19 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="35dp"
     tools:context=".MainActivity">
+    <EditText
+        android:hint="2"
+        android:id="@+id/user_id_edit_text"
+        android:text="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:hint="lucy"
+        android:text="lucy"
+        android:id="@+id/username_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:hint="lucy.mjpro@gmail.com"
+        android:text="lucy.mjpro@gmail.com"
+        android:id="@+id/emailÏ_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"/>
+    <Button
+        android:text="Trusted Web Activity"
+        android:id="@+id/twa_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-    <WebView
-        android:id="@+id/myWebView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:text="Web View"
+        android:id="@+id/web_view_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+Ï</LinearLayout>

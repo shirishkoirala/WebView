@@ -1,19 +1,21 @@
 package com.shirishkoirala.webview
 
-import android.os.Build
+import android.R.attr.value
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.view.View
-import android.webkit.WebSettings
-import android.webkit.WebView
-import androidx.activity.OnBackPressedCallback
+import android.widget.Button
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.androidbrowserhelper.trusted.TwaLauncher
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var myWebView: WebView
+    private lateinit var webViewButton: Button
+    private lateinit var twaButton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -23,61 +25,23 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        webViewButton = findViewById(R.id.web_view_button)
+        twaButton = findViewById(R.id.twa_button)
+        val userIdEditText = findViewById<EditText>(R.id.user_id_edit_text)
+        val usernameEditText = findViewById<EditText>(R.id.username_edit_text)
+        val emailEditText = findViewById<EditText>(R.id.emailÏ_edit_text)
 
-        myWebView = findViewById(R.id.myWebView)
-        setupWebView()
-
-        onBackPressedDispatcher.addCallback(
-            this,
-            object : OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    if (myWebView.canGoBack()) {
-                        myWebView.goBack()
-                    } else {
-                        onBackPressedDispatcher.onBackPressed()
-                    }
-                }
-            })
-    }
-
-    private fun setupWebView() {
-        myWebView.clearCache(true);
-        myWebView.clearHistory();
-        val webSettings = myWebView.settings
-        webSettings.cacheMode = WebSettings.LOAD_CACHE_ELSE_NETWORK
-        // Enable JavaScript (Required for React apps)
-        webSettings.javaScriptEnabled = true
-        webSettings.mediaPlaybackRequiresUserGesture = false
-        // Improve rendering performance
-        webSettings.domStorageEnabled = true
-        webSettings.cacheMode = WebSettings.LOAD_DEFAULT
-        webSettings.setRenderPriority(WebSettings.RenderPriority.HIGH)
-
-        // Enable hardware acceleration
-        webSettings.setEnableSmoothTransition(true)
-
-        // Reduce unnecessary overdraw
-        webSettings.useWideViewPort = true
-        webSettings.loadWithOverviewMode = true
-
-        // Allow mixed content for secure & non-secure connections
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            webSettings.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+        webViewButton.setOnClickListener {
+            val intent = Intent(this, WebViewActivity::class.java)
+            intent.putExtra("user_id", userIdEditText.text.toString())
+            intent.putExtra("username", usernameEditText.text.toString())
+            intent.putExtra("email", emailEditText.text.toString())
+            startActivity(intent)
         }
 
-        // Load WebView faster
-        myWebView.setLayerType(View.LAYER_TYPE_HARDWARE, null)
-        myWebView.loadUrl("http://192.168.128.52:3000/14/shirish/shirish.mjpro@gmail.com")
-    }
-
-    override fun onDestroy() {
-        if (myWebView != null) {
-            myWebView.loadUrl("about:blank")
-            myWebView.clearCache(true)
-            myWebView.clearHistory()
-            myWebView.removeAllViews()
-            myWebView.destroy()
+        twaButton.setOnClickListener {
+            val launcher = TwaLauncher(this)
+            launcher.launch(Uri.parse("http://192.168.128.52:3000/${userIdEditText.text}/${usernameEditText.text}/${emailEditText.text}"))
         }
-        super.onDestroy()
     }
 }

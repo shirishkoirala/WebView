@@ -36,7 +36,8 @@ android {
 }
 
 dependencies {
-    implementation ("androidx.webkit:webkit:1.8.0")
+    implementation("com.google.androidbrowserhelper:androidbrowserhelper:2.5.0")
+    implementation("androidx.webkit:webkit:1.8.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
