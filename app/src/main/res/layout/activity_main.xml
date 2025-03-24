@@ -22,7 +22,14 @@
     <EditText
         android:hint="lucy.mjpro@gmail.com"
         android:text="lucy.mjpro@gmail.com"
-        android:id="@+id/emailÏ_edit_text"
+        android:id="@+id/email_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"/>
+    <EditText
+        android:hint="http://192.168.128.52:4000"
+        android:text="http://192.168.128.166:3000"
+        android:id="@+id/host_name_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"/>
