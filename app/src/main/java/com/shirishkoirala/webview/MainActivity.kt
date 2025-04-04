@@ -45,17 +45,16 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val jsonObject = JSONObject()
-        jsonObject.put("user_id",  userIdEditText.text)
-        jsonObject.put("username", usernameEditText.text)
-        jsonObject.put("email", emailEditText.text)
-
-        val encryptedData = EncryptDecryptConstant.encryptForPWA(jsonObject.toString())
-
-        Log.e("encryptedData", encryptedData)
-
         twaButton.setOnClickListener {
             val launcher = TwaLauncher(this)
+            val jsonObject = JSONObject()
+            jsonObject.put("user_id",  userIdEditText.text)
+            jsonObject.put("username", usernameEditText.text)
+            jsonObject.put("email", emailEditText.text)
+
+            val encryptedData = EncryptDecryptConstant.encryptForPWA(jsonObject.toString())
+
+            Log.e("encryptedData", encryptedData)
             launcher.launch(Uri.parse("${hostName.text}?authToken=${ URLEncoder.encode(encryptedData, "UTF-8")}"))
         }
     }
