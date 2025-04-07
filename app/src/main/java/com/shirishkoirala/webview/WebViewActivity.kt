@@ -1,8 +1,8 @@
 package com.shirishkoirala.webview
 
-import android.os.Build
+import android.graphics.Color
 import android.os.Bundle
-import android.view.View
+import android.webkit.WebChromeClient
 import android.webkit.WebSettings
 import android.webkit.WebView
 import androidx.activity.OnBackPressedCallback
@@ -25,12 +25,13 @@ class WebViewActivity : AppCompatActivity() {
         }
         val extras = intent.extras
         if (extras != null) {
-            var userId = extras.getString("user_id")
-            var username = extras.getString("username")
-            var email = extras.getString("email")
+            val userId = extras.getString("user_id")
+            val username = extras.getString("name")
+            val email = extras.getString("email")
+            val hostName = extras.getString("host_name")
 
             myWebView = findViewById(R.id.myWebView)
-            setupWebView(userId, username, email)
+            setupWebView(hostName, userId, username, email)
 
             onBackPressedDispatcher.addCallback(
                 this,
@@ -44,38 +45,32 @@ class WebViewActivity : AppCompatActivity() {
                     }
                 })
         }
-
-
     }
 
-    private fun setupWebView(userId: String?, username: String?, email: String?) {
+    private fun setupWebView(
+        hostName: String?,
+        userId: String?,
+        username: String?,
+        email: String?
+    ) {
         myWebView.clearCache(true);
         myWebView.clearHistory();
-        val webSettings = myWebView.settings
-        webSettings.cacheMode = WebSettings.LOAD_CACHE_ELSE_NETWORK
+        myWebView.settings.cacheMode = WebSettings.LOAD_CACHE_ELSE_NETWORK
         // Enable JavaScript (Required for React apps)
-        webSettings.javaScriptEnabled = true
-        webSettings.mediaPlaybackRequiresUserGesture = false
-        // Improve rendering performance
-        webSettings.domStorageEnabled = true
-        webSettings.cacheMode = WebSettings.LOAD_DEFAULT
-        webSettings.setRenderPriority(WebSettings.RenderPriority.HIGH)
+        myWebView.settings.javaScriptEnabled = true
+        myWebView.settings.mediaPlaybackRequiresUserGesture = false
+        myWebView.settings.domStorageEnabled = true
 
-        // Enable hardware acceleration
-        webSettings.setEnableSmoothTransition(true)
-
-        // Reduce unnecessary overdraw
-        webSettings.useWideViewPort = true
-        webSettings.loadWithOverviewMode = true
-
-        // Allow mixed content for secure & non-secure connections
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            webSettings.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
-        }
-
-        // Load WebView faster
-        myWebView.setLayerType(View.LAYER_TYPE_HARDWARE, null)
-        myWebView.loadUrl("http://192.168.128.52:3000/$userId/$username/$email")
+        myWebView.settings.useWideViewPort = true
+        myWebView.settings.loadWithOverviewMode = true
+        myWebView.settings.allowFileAccess = true
+        myWebView.settings.allowContentAccess = true
+        myWebView.settings.setSupportMultipleWindows(true)
+        myWebView.settings.loadsImagesAutomatically = true
+        myWebView.setBackgroundColor(Color.TRANSPARENT)
+        myWebView.webChromeClient = WebChromeClient()
+        myWebView.settings.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+        myWebView.loadUrl("$hostName/$userId/$username/$email")
     }
 
     override fun onDestroy() {

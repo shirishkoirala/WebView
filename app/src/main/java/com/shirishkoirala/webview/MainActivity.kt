@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         webViewButton.setOnClickListener {
             val intent = Intent(this, WebViewActivity::class.java)
             intent.putExtra("user_id", userIdEditText.text.toString())
-            intent.putExtra("username", usernameEditText.text.toString())
+            intent.putExtra("name", usernameEditText.text.toString())
             intent.putExtra("email", emailEditText.text.toString())
             intent.putExtra("host_name", hostName.text.toString())
             startActivity(intent)
@@ -49,11 +49,10 @@ class MainActivity : AppCompatActivity() {
             val launcher = TwaLauncher(this)
             val jsonObject = JSONObject()
             jsonObject.put("user_id",  userIdEditText.text)
-            jsonObject.put("username", usernameEditText.text)
+            jsonObject.put("name", usernameEditText.text)
             jsonObject.put("email", emailEditText.text)
-
+            Log.d("jsonObject", jsonObject.toString())
             val encryptedData = EncryptDecryptConstant.encryptForPWA(jsonObject.toString())
-
             Log.e("encryptedData", encryptedData)
             launcher.launch(Uri.parse("${hostName.text}?authToken=${ URLEncoder.encode(encryptedData, "UTF-8")}"))
         }
