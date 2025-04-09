@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "195443263523",
+    "project_id": "turboscratch",
+    "storage_bucket": "turboscratch.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195443263523:android:ec73cf582f69c98fd58996",
+        "android_client_info": {
+          "package_name": "app.mjproductions.turboscratch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8Es8Sw77fWnvyHaGPt-SrfZuw-HCRo-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

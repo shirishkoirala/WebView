@@ -1,5 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
+    <color name="black_transparent_100">#00000000</color>
+    <color name="black_transparent_95">#F2000000</color>
+    <color name="black_transparent_90">#E6000000</color>
+    <color name="black_transparent_70">#B2000000</color>
+    <color name="black_transparent_60">#99000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="linear_1">#D1B793</color>
+    <color name="linear_3">#FFEBCD</color>
+    <color name="linear_5">#9D8B6E</color>
+
+    <color name="brass_gold">#C7B687</color>
+
+
+    <!--    new color-->
+    <color name="joker_gold_900">#382E23</color>
+    <color name="joker_gold_800">#65512F</color>
+    <color name="joker_gold_700">#8E7348</color>
+    <color name="joker_gold_600">#A88C5D</color>
+    <color name="joker_gold_500">#8F7962</color>
+    <color name="joker_gold_400">#FFDEA8</color>
+    <color name="joker_gold_300">#FFE4B8</color>
+    <color name="joker_gold_200">#FFE8C2</color>
+    <color name="joker_gold_50">#FFF4E0</color>
+    <color name="joker_gold_1000">#1D1811</color>
+    <color name="joker_black_900">#000000</color>
+    <color name="joker_black_800">#131313</color>
+    <color name="joker_black_700">#171717</color>
+    <color name="joker_black_600">#1B1B1B</color>
+    <color name="joker_black_500">#1E1E1E</color>
+    <color name="joker_black_400">#212121</color>
+    <color name="joker_black_300">#262626</color>
+    <color name="joker_black_200">#3D3D3D</color>
+    <color name="joker_black_100">#5F5F5F</color>
+    <color name="joker_black_50">#A6A6A6</color>
+    <color name="joker_gradient_gold_02_hori_1">#D6BC9E</color>
+    <color name="joker_gradient_gold_02_hori_2">#FFEEC0</color>
+    <color name="joker_gradient_gold_02_hori_3">#D6BC9E</color>
+    <color name="joker_rose_800">#44382C</color>
+    <color name="joker_green_900">#0D3D15</color>
+    <color name="joker_green_800">#134E1D</color>
+    <color name="joker_green_700">#1E712C</color>
+    <color name="joker_green_600">#28953A</color>
+    <color name="joker_green_500">#33B849</color>
+    <color name="joker_green_400">#3EDA41</color>
+    <color name="joker_green_300">#8BE99B</color>
+    <color name="joker_green_200">#B2F1BC</color>
+    <color name="joker_red_400">#DB3E3E</color>
+    <color name="joker_red_500">#BA3434</color>
+    <color name="joker_red_800">#551414</color>
+    <color name="joker_white_50">#FFFFFF</color>
+    <color name="joker_gray">#D9D9D9</color>
+    <color name="joker_light_gray">#E7E7E7</color>
+    <color name="joker_honey_900">#563F10</color>
+    <color name="joker_honey_800">#634415</color>
+    <color name="joker_honey_600">#8B6922</color>
+    <color name="joker_honey_500">#634415</color>
+    <color name="joker_honey_400">#DBA73E</color>
+    <color name="joker_transparent_overlay">#CD212121</color>
+    <color name="joker_alert_200">#E9AE8B</color>
+    <color name="joker_alert_400">#DB783E</color>
+    <color name="joker_alert_500">#B56333</color>
+    <color name="joker_alert_800">#452411</color>
+    <color name="joker_purple">#736396</color>
+    <color name="joker_black_grad_1">#141413</color>
+    <color name="joker_black_grad_2">#060606</color>
+    <color name="game_statistics_home_progress">#00475E</color>
+    <color name="game_statistics_away_progress">#0448D5</color>
+
+
+    <color name="bright_gray">#4DEBEBF5</color>
+
+
+    <color name="soccer_brown">#94571E</color>
+    <color name="soccer_orange">#FF7A00</color>
+    <color name="soccer_dark_green">#147847</color>
+    <color name="joker_gold_100">#FFEAC7</color>
+    <color name="soccer_purple">#5E4375</color>
+    <color name="soccer_purple_dark">#3D195B</color>
+
+    <color name="joker_gold_400_disabled">#645B4A</color>
 </resources>

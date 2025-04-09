@@ -1,14 +1,20 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.WebView" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.TurboScratch" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <item name="android:windowBackground">@color/joker_black_800</item>
+        <item name="colorPrimary">@color/joker_gold_400</item>
+        <item name="materialButtonStyle">@style/CustomButtonStyle</item>
     </style>
 
-    <style name="Theme.WebView" parent="Base.Theme.WebView" />
+    <style name="Theme.TurboScratch" parent="Base.Theme.TurboScratch" />
 
     <style name="Theme.Twa.FullScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="CustomButtonStyle" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/joker_rose_800</item>
     </style>
 </resources>
