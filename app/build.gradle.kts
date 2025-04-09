@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.shirishkoirala.webview"
+    namespace = "app.mjproductions.turboscratch"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.shirishkoirala.webview"
+        applicationId = "app.mjproductions.turboscratch"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

@@ -1,4 +1,4 @@
-package com.shirishkoirala.webview.utils
+package app.mjproductions.turboscratch.utils
 
 class Constants {
     companion object {

@@ -1,4 +1,4 @@
-package com.shirishkoirala.webview
+package com.shirishkoirala.turboscratch
 
 import org.junit.Test
 

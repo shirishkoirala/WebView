@@ -6,4 +6,9 @@
     </style>
 
     <style name="Theme.WebView" parent="Base.Theme.WebView" />
+
+    <style name="Theme.Twa.FullScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
 </resources>

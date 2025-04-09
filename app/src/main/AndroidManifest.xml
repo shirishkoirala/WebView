@@ -35,24 +35,25 @@
         <meta-data
             android:name="asset_statements"
             android:resource="@string/asset_statements" />
-        <activity
-            android:name="com.google.androidbrowserhelper.trusted.LauncherActivity"
-            android:exported="true">
-            <meta-data
-                android:name="android.support.customtabs.trusted.FALLBACK_STRATEGY"
-                android:value="webview" />
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+<!--        <activity-->
+<!--            android:name="com.google.androidbrowserhelper.trusted.LauncherActivity"-->
+<!--            android:theme="@style/Theme.Twa.FullScreen"-->
+<!--            android:exported="true">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.customtabs.trusted.FALLBACK_STRATEGY"-->
+<!--                android:value="webview" />-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <category android:name="android.intent.category.BROWSABLE" />-->
 
-                <!-- Edit android:host to handle links to the target URL-->
-                <data
-                    android:host="192.168.128.52:3000"
-                    android:scheme="http" />
-            </intent-filter>
-        </activity>
+<!--                &lt;!&ndash; Edit android:host to handle links to the target URL&ndash;&gt;-->
+<!--                <data-->
+<!--                    android:host="192.168.128.52:3000"-->
+<!--                    android:scheme="http" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
         <activity
             android:name="com.google.androidbrowserhelper.trusted.WebViewFallbackActivity"
             android:configChanges="orientation|screenSize" />

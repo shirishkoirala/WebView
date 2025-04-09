@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WebView</string>
+    <string name="app_name">Turbo Scratch</string>
     <string name="asset_statements">
                 [{
             \"relation\": [\"delegate_permission/common.handle_all_urls\"],

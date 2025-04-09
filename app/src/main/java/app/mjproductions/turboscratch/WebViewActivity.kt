@@ -1,4 +1,4 @@
-package com.shirishkoirala.webview
+package app.mjproductions.turboscratch
 
 import android.graphics.Color
 import android.os.Bundle

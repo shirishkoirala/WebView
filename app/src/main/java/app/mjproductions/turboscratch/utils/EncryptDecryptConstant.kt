@@ -1,10 +1,8 @@
-package com.shirishkoirala.webview.utils
+package app.mjproductions.turboscratch.utils
 
 import android.util.Base64
-import android.util.Log
 import java.io.IOException
 import java.io.UnsupportedEncodingException
-import java.net.URLEncoder
 import java.security.GeneralSecurityException
 import java.security.InvalidAlgorithmParameterException
 import java.security.InvalidKeyException

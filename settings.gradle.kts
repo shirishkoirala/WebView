@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "WebView"
+rootProject.name = "Turbo Scratch"
 include(":app")
  

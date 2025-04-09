@@ -1,4 +1,4 @@
-package com.shirishkoirala.webview
+package app.mjproductions.turboscratch
 
 import android.content.Intent
 import android.net.Uri
@@ -10,9 +10,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import app.mjproductions.turboscratch.utils.EncryptDecryptConstant
 import com.google.androidbrowserhelper.trusted.TwaLauncher
-import com.shirishkoirala.webview.utils.Constants
-import com.shirishkoirala.webview.utils.EncryptDecryptConstant
 import org.json.JSONObject
 import java.net.URLEncoder
 
