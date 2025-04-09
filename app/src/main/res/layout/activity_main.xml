@@ -28,8 +28,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"/>
     <EditText
-        android:hint="http://192.168.128.52:4000"
-        android:text="http://192.168.128.166:3000"
+        android:hint="https://feature-staging.d1izslsso66vbm.amplifyapp.com/"
+        android:text="https://feature-staging.d1izslsso66vbm.amplifyapp.com/"
         android:id="@+id/host_name_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
