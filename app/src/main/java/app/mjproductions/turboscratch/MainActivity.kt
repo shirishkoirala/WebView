@@ -26,6 +26,12 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val sharedPrefs = getSharedPreferences("userData", MODE_PRIVATE)
+        binding.userIdEditText.setText(sharedPrefs.getString("userId", ""))
+        binding.usernameEditText.setText(sharedPrefs.getString("username", ""))
+        binding.emailEditText.setText(sharedPrefs.getString("email", ""))
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -72,5 +78,15 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("email", binding.emailEditText.text.toString())
         intent.putExtra("host_name", url)
         startActivity(intent)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        val sharedPrefs = getSharedPreferences("userData", MODE_PRIVATE)
+        sharedPrefs.edit()
+            .putString("userId", binding.userIdEditText.text.toString())
+            .putString("username", binding.usernameEditText.text.toString())
+            .putString("email", binding.emailEditText.text.toString())
+            .apply()
     }
 }
