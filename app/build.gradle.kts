@@ -34,9 +34,14 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        buildConfig = true
+        viewBinding = true
+    }
 }
 
 dependencies {
+    implementation("com.airbnb.android:lottie:6.6.6")
     implementation("com.google.androidbrowserhelper:androidbrowserhelper:2.5.0")
     implementation("androidx.webkit:webkit:1.8.0")
     implementation(libs.androidx.core.ktx)

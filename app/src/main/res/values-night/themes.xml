@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.TurboScratch" parent="Theme.Material3.Dark.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <item name="android:windowBackground">@color/joker_black_800</item>
+<!--        <item name="android:windowBackground">@color/joker_black_800</item>-->
         <item name="colorPrimary">@color/joker_gold_400</item>
         <item name="materialButtonStyle">@style/CustomButtonStyle</item>
     </style>

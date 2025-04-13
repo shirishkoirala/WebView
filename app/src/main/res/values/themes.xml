@@ -17,4 +17,20 @@
     <style name="CustomButtonStyle" parent="Widget.Material3.Button">
         <item name="android:textColor">@color/joker_rose_800</item>
     </style>
+
+    <style name="text_input_layout_style">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorHint">@color/joker_black_100</item>
+        <item name="boxBackgroundColor">@null</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="boxBackgroundMode">none</item>
+        <item name="endIconMode">none</item>
+        <item name="expandedHintEnabled">false</item>
+        <item name="hintEnabled">false</item>
+        <item name="startIconTint">@null</item>
+        <item name="android:background">@drawable/edittext_state</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+    </style>
 </resources>
