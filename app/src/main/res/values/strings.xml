@@ -9,4 +9,16 @@
         }
         ]
     </string>
+    <string name="mj_beta_competition"><![CDATA[M&J Beta Competition]]></string>
+    <string name="internal_round">Internal Round</string>
+    <string name="system_check_in_progress">System check in progress</string>
+    <string name="enter_id">enter id</string>
+    <string name="enter_name">enter name</string>
+    <string name="enter_email">enter email</string>
+    <string name="i_m_ready">I\'m Ready</string>
+    <string name="user_id">User ID</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="disclaimer">Disclaimer</string>
+    <string name="disclaimer_text">This screen wont be used in the actual app, and is currently just a placeholder screen. Also the how to page is still getting worked on.</string>
 </resources>

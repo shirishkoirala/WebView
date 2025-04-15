@@ -38,6 +38,12 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        binding.topNavBinding.videoView.setVideoURI(Uri.parse("android.resource://" + packageName + "/" + R.raw.landing))
+        binding.topNavBinding.videoView.start()
+        binding.topNavBinding.videoView.setOnPreparedListener { mediaPlayer ->
+            mediaPlayer.isLooping = true
+            binding.topNavBinding.videoView.start()
+        }
         binding.btnStartPlaying.root.setOnClickListener {
             openTwa()
         }

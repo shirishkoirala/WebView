@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -9,92 +9,151 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <RelativeLayout
+    <include
+        android:id="@+id/top_nav_binding"
+        layout="@layout/layout_top_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/form_container"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:background="@drawable/gradient_bottom"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="-20dp"
+        android:background="@drawable/top_and_bottom_border"
+        android:paddingVertical="32dp"
+        app:layout_constraintTop_toBottomOf="@id/top_nav_binding">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/scratch_heroes" />
+        <TextView
+            android:id="@+id/label_user_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/user_id"
+            android:textColor="@color/joker_white_50"
+            app:layout_constraintBottom_toTopOf="@id/user_id_edit_text"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <View
+        <EditText
+            android:id="@+id/user_id_edit_text"
+            style="@style/text_input_layout_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:hint="@string/enter_id"
+            android:inputType="numberDecimal"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="16dp"
+            app:layout_constraintEnd_toStartOf="@id/username_edit_text"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/label_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/name"
+            android:textColor="@color/joker_white_50"
+            app:layout_constraintBottom_toTopOf="@id/username_edit_text"
+            app:layout_constraintStart_toStartOf="@id/username_edit_text" />
+
+        <EditText
+            android:id="@+id/username_edit_text"
+            style="@style/text_input_layout_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="28dp"
+            android:hint="@string/enter_name"
+            android:inputType="textPersonName"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/user_id_edit_text"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/label_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/email"
+            android:textColor="@color/joker_white_50"
+            app:layout_constraintBottom_toTopOf="@id/email_edit_text"
+            app:layout_constraintStart_toStartOf="@id/email_edit_text" />
+
+        <EditText
+            android:id="@+id/email_edit_text"
+            style="@style/text_input_layout_style"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/gradient_bottom" />
-    </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:hint="@string/enter_email"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_id_edit_text" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="-100dp"
-        android:gravity="center">
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/form_container">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+        <ImageView
+            android:id="@+id/info_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/icon_disclaimer"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="71dp"
-                android:layout_marginBottom="50dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/turbo_scratch_logo" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/disclaimer"
+            android:textColor="@color/joker_red_400"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/info_icon"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/user_id_edit_text"
-                style="@style/text_input_layout_style"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:hint="1"
-                android:inputType="numberDecimal"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="16dp" />
-
-            <EditText
-                android:id="@+id/username_edit_text"
-                style="@style/text_input_layout_style"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:hint="dev"
-                android:inputType="textPersonName"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="16dp" />
-
-            <EditText
-                android:id="@+id/email_edit_text"
-                style="@style/text_input_layout_style"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="25dp"
-                android:hint="dev.mjpro@gmail.com"
-                android:inputType="textEmailAddress"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="16dp" />
-
-        </LinearLayout>
-
-        <include
-            android:id="@+id/btn_start_playing"
-            layout="@layout/layout_primary_button"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_marginTop="8dp"
+            android:text="@string/disclaimer_text"
+            app:layout_constraintTop_toBottomOf="@id/info_icon" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</RelativeLayout>
+
+    <include
+        android:id="@+id/btn_start_playing"
+        layout="@layout/layout_primary_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

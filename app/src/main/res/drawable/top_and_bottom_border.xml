@@ -1,0 +1,17 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background shape without full border stroke -->
+    <!-- Top border -->
+    <item android:gravity="top">
+        <shape android:shape="rectangle">
+            <size android:height="1dp" />
+            <solid android:color="@color/joker_black_200" />
+        </shape>
+    </item>
+    <!-- Bottom border -->
+    <item android:gravity="bottom">
+        <shape android:shape="rectangle">
+            <size android:height="1dp" />
+            <solid android:color="@color/joker_black_200" />
+        </shape>
+    </item>
+</layer-list>
