@@ -5,7 +5,7 @@
             \"relation\": [\"delegate_permission/common.handle_all_urls\"],
             \"target\": {
                 \"namespace\": \"web\",
-                \"site\": \"https://feature-staging.d1izslsso66vbm.amplifyapp.com/\"}
+                \"site\": \"https://main.d2tqst54ptqduu.amplifyapp.com/\"}
         }
         ]
     </string>
