@@ -38,25 +38,10 @@
             android:name="asset_statements"
             android:resource="@string/asset_statements" />
 
-        <activity
-            android:name="com.google.androidbrowserhelper.trusted.LauncherActivity"
+        <service
+            android:name="androidx.browser.customtabs.PostMessageService"
             android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.Twa.FullScreen">
-            <meta-data
-                android:name="android.support.customtabs.trusted.FALLBACK_STRATEGY"
-                android:value="webview" />
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="192.168.68.55:3000"
-                    android:scheme="http" />
-            </intent-filter>
-        </activity>
+            tools:ignore="ExportedServiceWithoutPermission" />
         <activity
             android:name="com.google.androidbrowserhelper.trusted.WebViewFallbackActivity"
             android:configChanges="orientation|screenSize" />
